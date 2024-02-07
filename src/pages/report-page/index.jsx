@@ -1,17 +1,18 @@
-import { useEffect, useState, useRef } from "react";
-import ReportPageView from "./report-page";
-import html2canvas from "html2canvas"; 
-import { saveAs } from "file-saver"; 
+import { useEffect, useState, useRef } from 'react'
+import ReportPageView from './report-page'
+import html2canvas from 'html2canvas'
+import { saveAs } from 'file-saver'
+import { timeData, data } from '../../constants'
 
 const ReportPage = () => {
-  const [statistics, setStatistics] = useState(null); // 통계 데이터 상태
-  const statisticsRef = useRef(null); // 통계를 렌더링할 DOM 요소
+  const [statistics, setStatistics] = useState(null) // 통계 데이터 상태
+  const statisticsRef = useRef(null) // 통계를 렌더링할 DOM 요소
   // 통계 생성 함수
   const generateStatistics = () => {
     // 통계를 생성하고 상태에 설정하는 로직
-    const generatedStatistics = "통계 값 1: 100, 통계 값 2: 200";
-    setStatistics(generatedStatistics);
-  };
+    const generatedStatistics = '통계 값 1: 100, 통계 값 2: 200'
+    setStatistics(generatedStatistics)
+  }
 
   // 이미지 저장 함수
   const saveStatisticsImage = () => {
@@ -20,14 +21,14 @@ const ReportPage = () => {
       // 캔버스를 이미지로 변환하고 Blob 생성
       canvas.toBlob((blob) => {
         // Blob을 파일로 저장
-        saveAs(blob, "statistics.png");
+        saveAs(blob, 'statistics.png')
 
         // 인스타그램 앱 실행하는 링크 생성 (예시)
-        const instagramUrl = "instagram://app";
-        window.open(instagramUrl, "_blank");
-      });
-    });
-  };
+        const instagramUrl = 'instagram://app'
+        window.open(instagramUrl, '_blank')
+      })
+    })
+  }
 
   return (
     <ReportPageView
@@ -36,8 +37,10 @@ const ReportPage = () => {
       statisticsRef={statisticsRef}
       generateStatistics={generateStatistics}
       saveStatisticsImage={saveStatisticsImage}
+      timeData={timeData}
+      data={data}
     />
-  );
-};
+  )
+}
 
-export default ReportPage;
+export default ReportPage
