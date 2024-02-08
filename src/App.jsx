@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<MoodResultPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/calender" element={<Calendar />} />
+      <Route path="/calendar" element={<Calendar />} />
       <Route
         path="/mood"
         element={
