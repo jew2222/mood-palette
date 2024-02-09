@@ -18,7 +18,7 @@ const NavBar = () => {
           <Link to="/mood/report">보고서</Link>
         </li>
         <li>
-          <Link to="/mood/result">감정 결과</Link>
+          <Link to="/result">감정 결과</Link>
         </li>
         <li>
           {' '}

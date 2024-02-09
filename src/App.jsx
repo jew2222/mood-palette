@@ -12,6 +12,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/calendar" element={<Calendar />} />
+      <Route path="/result" element={<MoodResultPage />} />
       <Route
         path="/mood"
         element={
@@ -21,7 +22,6 @@ function App() {
         }
       >
         <Route path="test" element={<div>테스트</div>} />
-        <Route path="result" element={<MoodResultPage />} />
         <Route path="report" element={<ReportPage />} />
       </Route>
     </Routes>

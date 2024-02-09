@@ -5,7 +5,7 @@ import { saveAs } from 'file-saver'
 import { timeData, data } from '../../constants'
 
 const ReportPage = () => {
-  const [statistics, setStatistics] = useState(null) // 통계 데이터 상태
+  const [statistics, setStatistics] = useState([]) // 통계 데이터 상태
   const statisticsRef = useRef(null) // 통계를 렌더링할 DOM 요소
   // 통계 생성 함수
   const generateStatistics = () => {
@@ -22,10 +22,6 @@ const ReportPage = () => {
       canvas.toBlob((blob) => {
         // Blob을 파일로 저장
         saveAs(blob, 'statistics.png')
-
-        // 인스타그램 앱 실행하는 링크 생성 (예시)
-        const instagramUrl = 'instagram://app'
-        window.open(instagramUrl, '_blank')
       })
     })
   }
